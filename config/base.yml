@@ -1,0 +1,80 @@
+site_name: D0SL2 Docs
+site_url: https://v2.d0sl.org/docs/
+
+theme:
+  name: material
+  logo: assets/images/d0sl-logo-70.png
+  favicon: assets/images/d0sl-logo-70.png
+  custom_dir: '../../overrides/'
+  font:
+    text: Roboto
+    code: Roboto Mono
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      primary: red
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: red
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.tabs
+    - content.code.copy
+    - content.tabs.link
+    - search.suggest
+    - search.highlight
+    - search.share
+    - toc.follow
+    - content.code.annotate
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  homepage: https://v2.d0sl.org
+
+  # Тут можно ссылки на ресурсы сделать (телеграм итд)
+  social:
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:<info@d0sl.org>
+
+  generator: false
+
+  alternate:
+    - name: English
+      link: /docs/en/
+      lang: en
+    - name: Russian
+      link: /docs/ru/
+      lang: ru
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+      permalink: '#'
+  - attr_list
+  - def_list
