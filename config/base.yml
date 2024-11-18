@@ -41,6 +41,11 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
+plugins:
+  - blog:
+      blog_dir: en/blog
+      blog_toc: true
+
 extra:
   homepage: https://v2.d0sl.org
 

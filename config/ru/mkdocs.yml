@@ -14,6 +14,7 @@ nav:
   - Начинающим:
     - getting-started/index.md
     - Настройка окружения разработчика: getting-started/dev-env.md
+  - Блог: 'blog/index.md'
 
 plugins:
   - search:

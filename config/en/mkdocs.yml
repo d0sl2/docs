@@ -14,6 +14,7 @@ nav:
   - Getting started with <code> D0SL</code>:
     - getting-started/index.md
     - Setting up development environment: getting-started/dev-env.md
+  - Blog: 'blog/index.md'
 
 plugins:
   - search:
