@@ -1,0 +1,78 @@
+site_name: Документация D0SL2
+site_url: https://v2.d0sl.org/docs/
+docs_dir: '../../docs/ru'
+site_dir: '../../build/docs/ru'
+
+theme:
+  name: material
+  language: ru
+  logo: assets/images/d0sl-logo-70.png
+  favicon: assets/images/d0sl-logo-70.png
+  custom_dir: '../../overrides/'
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - content.code.copy
+    - content.tabs.link
+    - search.suggest
+    - search.highlight
+    - search.share
+    - toc.follow
+    - content.code.annotate
+
+nav:
+  - Главная: 'index.md'
+
+extra:
+  homepage: https://v2.d0sl.org
+
+  # Тут можно ссылки на ресурсы сделать (телеграм итд)
+  social:
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:<info@d0sl.org>
+
+  generator: false
+
+  alternate:
+    - name: English
+      link: /docs/en/
+      lang: en
+    - name: Russian
+      link: /docs/ru/
+      lang: ru
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+      permalink: '#'
+  - attr_list
+  - def_list
+
+plugins:
+  - search:
+      lang: ru
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+  - tags:
+      tags_slugify_separator: '-'
+
+copyright: Copyright &copy; 2018 - 2024 Eyeline
