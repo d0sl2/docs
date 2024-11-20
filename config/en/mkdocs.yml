@@ -22,5 +22,7 @@ plugins:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - tags:
       tags_slugify_separator: '-'
+  - blog:
+      blog_toc: true
 
 copyright: Copyright &copy; 2018 - 2024 Eyeline

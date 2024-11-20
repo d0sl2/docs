@@ -38,13 +38,14 @@ theme:
     - toc.follow
     - content.code.annotate
 
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
 extra_css:
   - stylesheets/extra.css
-
-plugins:
-  - blog:
-      blog_dir: en/blog
-      blog_toc: true
+  - https://unpkg.com/katex@0/dist/katex.min.css
 
 extra:
   homepage: https://v2.d0sl.org
@@ -74,6 +75,12 @@ markdown_extensions:
   - pymdownx.superfences
   - admonition
   - pymdownx.details
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

@@ -11,6 +11,7 @@ nav:
   - Философия:
     - philosophy/index.md
     - Почему мы создали <code>D0SL</code>: philosophy/motivation.md
+    - Математика <code>D0SL</code>: philosophy/math.md
   - Начинающим:
     - getting-started/index.md
     - Настройка окружения разработчика: getting-started/dev-env.md
@@ -22,5 +23,7 @@ plugins:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
   - tags:
       tags_slugify_separator: '-'
+  - blog:
+      blog_toc: true
 
 copyright: Copyright &copy; 2018 - 2024 Eyeline
