@@ -17,6 +17,7 @@ nav:
     - Настройка окружения разработчика: getting-started/dev-env.md
   - Язык D0SL:
     - language/index.md
+    - Доменные модели: language/domain-models.md
   - Блог: 'blog/index.md'
 
 plugins:
