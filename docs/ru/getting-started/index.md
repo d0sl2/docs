@@ -25,7 +25,8 @@
 7. Нажмите Finish:  
 ![](/docs/ru/assets/images/getting-started/install-plugin-07.png){ loading=lazy width="400" }
 
-8. Нажмите `Restart eclipse`.
+8. Нажмите `Restart eclipse`:  
+![](/docs/ru/assets/images/getting-started/install-plugin-10.png){ loading=lazy width="400" }
 
 ## Первый проект
 

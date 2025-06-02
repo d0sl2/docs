@@ -4,7 +4,7 @@ Prism.languages.d0sl = {
 		lookbehind: true,
 		greedy: true
 	},
-    'keyword': /\b(if|then|else|elif|forall|for\ all|exists|use|function|from|def|num|logical|string|fun|predicate|model|semanticmodel|signature|end|is)\b/,
+    'keyword': /\b(if|then|else|elif|forall|for\ all|exists|use|function|func|from|def|num|logical|string|predicate|model|semanticmodel|or|and|signature|end|is|with|abstract|type|sign)\b/,
     'string': {
 		pattern: /(^|[^\\])"(?:\\.|[^\\"\r\n])*"(?!\s*:)/,
 		lookbehind: true,

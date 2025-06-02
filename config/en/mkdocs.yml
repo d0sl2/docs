@@ -10,7 +10,7 @@ nav:
   - Home: 'index.md'
   - Philosophy:
     - philosophy/index.md
-    - Why we made <code>D0SL</code>?: philosophy/motivation.md
+    # - Why we made <code>D0SL</code>?: philosophy/motivation.md
   - Getting started with <code> D0SL</code>:
     - getting-started/index.md
     - Setting up development environment: getting-started/dev-env.md

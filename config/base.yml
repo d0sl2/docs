@@ -61,12 +61,12 @@ extra:
   generator: false
 
   alternate:
-    - name: English
-      link: /docs/en/
-      lang: en
     - name: Russian
       link: /docs/ru/
       lang: ru
+    - name: English
+      link: /docs/en/
+      lang: en
 
 markdown_extensions:
   # - pymdownx.highlight:

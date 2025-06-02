@@ -59,7 +59,7 @@ model HelloWorld is
     end
 
     predicate start() def
-        debug.logStr(getGreeting())
+        debug.logStr(getGreeting());
     end
 end
 ```
@@ -91,18 +91,18 @@ predicate <predicateName>(<argument name>: <type>, ...) def abstract
     Т.е в данном примере переменная `a` не будет вычислена, а переменная `b` – будет:
     ```d0sl
     predicate some() def
-        var a = "1234" + "5678"
-        var b = "Hello world!"
-        debug.logStr(b)
+        var a = "1234" + "5678";
+        var b = "Hello world!";
+        debug.logStr(b);
     end
     ```
 
 Например:
 ```d0sl
 predicate some() def
-    var hello = "Hello"
-    var world = "world!"
-    debug.logStr(hello + " " + world)
+    var hello = "Hello";
+    var world = "world!";
+    debug.logStr(hello + " " + world);
 end
 ```
 
@@ -113,7 +113,7 @@ end
 В языке они определяются следующим образом:
 ```d0sl
 func <functionName>(<argument name>: <type>, ...) -> <return type>
-   var <var name> = <expression>
+   var <var name> = <expression>;
    ...
    return <expression>
 end
@@ -136,6 +136,9 @@ end
 func <functionName>(<argument name>: <type>, ...) -> <return type> abstract
 ```
 
+!!! warning
+    Важно, что абстрактные функции пока могут использоваться только в сигнатурах, не в моделях.
+
 Где `<functionName>` – произвольное имя функции. `<argument name>` – имя одного из аргументов, `<type>` – его тип.
 `<return type>` – тип выражения, которое функция возвращает.
 
@@ -145,19 +148,46 @@ func <functionName>(<argument name>: <type>, ...) -> <return type> abstract
 Например:
 ```d0sl
 func some() -> string
-    var hello = "Hello"
-    var world = "world!"
-    return hello + " " + world
+    var hello = "Hello";
+    var world = "world!";
+
+    return hello + " " + world;
 end
 ```
 
 !!! note
-    Строки в теле функции или предиката должны идти подряд, или же перед пустой строкой должна стоять `;`:  
+    После каждой строки в теле предиката или функции (кроме `return`) должна стоять точка с запятой `;`:  
     Верно ✅:
     ```d0sl
     predicate start() def
-        <expression1>
-        <expression2>
+        <expression1>;
+        <expression2>;
+        <expression3>;
+    end
+    ```
+    ```d0sl
+    predicate start() def
+        <expression1>;
+        <expression2>;
+
+        <expression3>;
+    end
+    ```
+    ```d0sl
+    predicate start() def
+        <expression1>;
+        <expression2>;
+        
+        // Comment:
+        <expression3>;
+    end
+    ```
+    
+    Неверно ❌:
+    ```d0sl
+    predicate start() def
+        <expression1>;
+
         <expression3>
     end
     ```
@@ -166,33 +196,8 @@ end
         <expression1>
         <expression2>;
 
-        <expression3>
-    end
-    ```
-    ```d0sl
-    predicate start() def
-        <expression1>
-        <expression2>
         // Comment:
-        <expression3>
-    end
-    ```
-    
-    Неверно ❌:
-    ```d0sl
-    predicate start() def
-        <expression1>
-
-        <expression3>
-    end
-    ```
-    ```d0sl
-    predicate start() def
-        <expression1>
-        <expression2>
-
-        // Comment:
-        <expression3>
+        <expression3>;
     end
     ```
     ```d0sl
@@ -200,6 +205,47 @@ end
         <expression1>;
         <expression2>
         <expression3>
+    end
+    ```
+
+!!! note
+    При этом в теле `if` или `exists`, `forall` точки с запятой не используются. Например:
+    ```d0sl
+    predicate start() def
+        <expression1>;
+        <expression2>;
+        <expression3>;
+        forall x in [1,2,3]: (
+            x > 0
+            and
+            x < 4
+        );
+
+        if 1 == 2 then 
+            true or
+            false
+        elif 2 == 2 then
+            true or
+            false
+        else
+            false
+        end;
+    end
+    ```
+
+    Если вы не хотите использовать `;`, то можно писать выражение предиката через `and` и переносы строки:
+    ```d0sl 
+    predicate start() def
+        <expression1> and
+        <expression2> and
+        <expression3>;
+    end
+
+    // Эквивалентно:
+    predicate start() def
+        <expression1>;
+        <expression2>;
+        <expression3>;
     end
     ```
 
@@ -299,12 +345,12 @@ model TestModel is
     use test: Test from "..."
 
     predicate isEmpty(abc: Test.ABC) def
-        test.toString(abc) != ""
+        test.toString(abc) != "";
     end
 
     predicate start() def
-        var a = test.getABC()
-        isEmpty(a)
+        var a = test.getABC();
+        isEmpty(a);
     end
 end
 ```

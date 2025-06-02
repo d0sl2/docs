@@ -10,11 +10,12 @@ nav:
   - Главная: 'index.md'
   - Философия:
     - philosophy/index.md
-    - Почему мы создали <code>D0SL</code>: philosophy/motivation.md
+    # - Почему мы создали <code>D0SL</code>: philosophy/motivation.md
     - Математика <code>D0SL</code>: philosophy/math.md
   - Начинающим:
     - getting-started/index.md
-    - Настройка окружения разработчика: getting-started/dev-env.md
+    # - Настройка окружения разработчика: getting-started/dev-env.md
+    - Обновление: getting-started/update.md
   - Язык D0SL:
     - language/index.md
     - Доменные модели: language/domain-models.md
@@ -29,4 +30,4 @@ plugins:
   - blog:
       blog_toc: true
 
-copyright: Copyright &copy; 2018 - 2024 Eyeline
+copyright: Copyright &copy; 2018 - 2025 Eyeline
